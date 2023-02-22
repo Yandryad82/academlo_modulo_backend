@@ -52,3 +52,18 @@ ALTER TABLE "courses" ADD FOREIGN KEY ("teacher_id") REFERENCES "teachers" ("id"
 ALTER TABLE "courses" ADD FOREIGN KEY ("category_id") REFERENCES "categories" ("id");
 
 ALTER TABLE "course_videos" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id");
+
+
+courses=# INSERT INTO teachers (name) VALUES ('Carlos'), ('Manuel'), ('Andres');
+
+courses=# INSERT INTO roles (name) VALUES ('studen'), ('teacher'), ('admin');
+
+courses=# INSERT INTO categories (name) VALUES ('electronica'), ('informatica'), ('arduino');
+
+courses=# INSERT INTO users (name, email, password, age) VALUES ('Yandry', 'yandryad82@gmail.com', '123456789', 40), ('Lianet', 'lianetvc@gmail.com'
+, 123456789, 32), ('Abigail', 'abigail@gmail.com', '123456789', 0);
+courses=# INSERT INTO courses (title, description, level, teacher_id, category_id) VALUES ('Electrónica Básica', 'Identificación y Medicion de Componentes', 'basico', 1, 1), ('Informática Básica', 'Sistema Operativo Windows', 'basico', 2, 2), ('Aprendiendo Arduino', 'Instalación y Configuración de placas arduini', 'basico', 3, 3);
+
+courses=# INSERT INTO user_roles (user_id, role_id) VALUES (1, 3), (2, 1), (3, 1);
+
+courses=# INSERT INTO course_videos (title, url, course_id) VALUES ('Aprende Electrónica', 'http://electronicabasica.com', 1), ('Sistema Operativo Windows', 'http://microsoftt.com/curso_base', 2);
